@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  devmanweb:
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - .:/devman
