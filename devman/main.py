@@ -31,3 +31,7 @@ if __name__ == "__main__":
         if passcard.is_active:
             active_passcards.append(passcard)
     print('Активных пропусков:', len(active_passcards), "\n")
+
+    print('Шаг 5')
+    print('Вcего пропусков:', Passcard.objects.count())
+    print('Активных пропусков:', Passcard.objects.filter(is_active=True).count(), "\n")
