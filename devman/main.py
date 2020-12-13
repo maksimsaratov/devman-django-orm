@@ -24,5 +24,10 @@ if __name__ == "__main__":
     print('is_active:', any_passcard.is_active, "\n")
 
     print('Шаг 4')
-    print('ВСего пропусков:', Passcard.objects.count())
-    print('Активных пропусков:', Passcard.objects.filter(is_active=True).count(), "\n")
+    print('Вcего пропусков:', Passcard.objects.count())
+    passcards = Passcard.objects.all()
+    active_passcards = []
+    for passcard in passcards:
+        if passcard.is_active:
+            active_passcards.append(passcard)
+    print('Активных пропусков:', len(active_passcards), "\n")
