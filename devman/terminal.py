@@ -37,3 +37,6 @@ if __name__ == "__main__":
 
     print('Шаг 8')
     print('Визиты:', Visit.objects.all(), "\n")
+
+    print('Шаг 9')
+    print('Не закрытые визиты:', Visit.objects.filter(leaved_at=None).all(), "\n")
