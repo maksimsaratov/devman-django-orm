@@ -3,6 +3,8 @@ version: "3.8"
 services:
   devmanweb:
     build: .
-    command: tail -f /dev/null
+    command: python main.py
     volumes:
       - ./devman:/devman
+    ports:
+      - 8000:8000
