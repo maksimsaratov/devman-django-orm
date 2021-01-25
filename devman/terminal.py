@@ -92,4 +92,3 @@ if __name__ == "__main__":
             visits_1000_minutes.append(visit)
     print('Визиты дольше 10 минут: ', len(visits_10_minutes))
     print('Визиты дольше 1000 минут: ', len(visits_1000_minutes))
-
