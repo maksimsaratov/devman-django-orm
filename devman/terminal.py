@@ -45,8 +45,14 @@ if __name__ == "__main__":
     print('Шаг 10')
     open_visits = Visit.objects.filter(leaved_at=None).all()
     for open_visit in open_visits:
-        print(open_visit.passcard.owner_name, 'зашёл в хранилище, время по Москве:')
+        print('Зашёл в хранилище, время по Москве:')
         print(timezone.localtime(open_visit.entered_at), "\n")
 
         print('Находится в хранилище:')
         print(str(timezone.now() - open_visit.entered_at).split('.', 2)[0], "\n")
+
+
+    print('Шаг 11')
+    open_visits = Visit.objects.filter(leaved_at=None).all()
+    for open_visit in open_visits:
+        print(open_visit.passcard.owner_name)
