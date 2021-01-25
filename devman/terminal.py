@@ -56,3 +56,15 @@ if __name__ == "__main__":
     open_visits = Visit.objects.filter(leaved_at=None).all()
     for open_visit in open_visits:
         print(open_visit.passcard.owner_name)
+
+
+    print('Шаг 13')
+    passcards = Passcard.objects.all()
+
+    for i in range(passcards.count()):
+        visits = Visit.objects.filter(passcard=passcards[i]).all()
+        if visits.count() > 0:
+            print(visits)
+            break
+
+
