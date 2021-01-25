@@ -1,6 +1,7 @@
 import os
-import sys
 import django
+
+from django.utils import timezone
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 django.setup()
@@ -40,3 +41,12 @@ if __name__ == "__main__":
 
     print('Шаг 9')
     print('Не закрытые визиты:', Visit.objects.filter(leaved_at=None).all(), "\n")
+
+    print('Шаг 10')
+    open_visits = Visit.objects.filter(leaved_at=None).all()
+    for open_visit in open_visits:
+        print(open_visit.passcard.owner_name, 'зашёл в хранилище, время по Москве:')
+        print(timezone.localtime(open_visit.entered_at), "\n")
+
+        print('Находится в хранилище:')
+        print(str(timezone.now() - open_visit.entered_at).split('.', 2)[0], "\n")
